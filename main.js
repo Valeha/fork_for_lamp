@@ -3,7 +3,7 @@ Date.now||(Date.now=function(){return(new Date.getTime())}),function(){"use stri
 (function () {
 	'use strict';
 	
-	var version_modss = '3.0', API = 'http://api.lampa.stream/', type = '', jackets = {}, cards, ping_auth, manifest, menu_list = [], vip = true, user_id = '', uid = 'dcbee9ef84465be64feb69380f1e1ace', IP, logged = false;
+	var version_modss = '3.0', API = 'http://api.lampa.stream/', type = '', jackets = {}, cards, ping_auth, manifest, menu_list = [], vip = false, user_id = '', uid = 'dcbee9ef84465be64feb69380f1e1ace', IP, logged = false;
 	
 	var Modss = {
 		init: function () {
@@ -56,7 +56,7 @@ Date.now||(Date.now=function(){return(new Date.getTime())}),function(){"use stri
   		}
   		var ads_4k = ['<div style="padding: 1.5em 2em; padding-top: 0;">', '<div style="background: #3e3e3e; padding: 1em; border-radius: 0.3em;">', '<div style="line-height: 1.4;">Надоело смотреть в плохом качестве?<br>Хочешь смотреть в FHD и 4K? Переходи в телеграм бот <span style="color: #24b4f9">@modssmy_bot</span> для подключения VIP</div>', '</div>', '</div>'].join('');
     	Lampa.Controller.listener.follow('toggle', function(e) {
-    		if(e.name == 'select' && !vip) {
+    		if(e.name == 'select' && vip) {
     			setTimeout(function() {
     				if($('.selectbox .scroll__body div:eq(0)').html().indexOf('.land') >= 0)
 					  $('.selectbox .scroll__body div:eq(0)').remove();
